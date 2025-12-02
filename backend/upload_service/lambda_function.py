@@ -26,6 +26,7 @@ s3_client = boto3.client(
 
 BUCKET_NAME = os.environ.get('RAWVIDEO_BUCKET_NAME')
 
+#lamdba_handler function
 def lambda_handler(event, context):
     try:
         # --- 2. PARSE INPUT (POST METHOD) ---
