@@ -44,6 +44,10 @@ jobs:
             --function-name GeneratePresignedURL \
             --zip-file fileb://backend/upload_service/deployment.zip
 
+          #Wait 5 seconds for the code update to complete ---
+          echo "Waiting 5 seconds for code update to stabilize..."
+          sleep 5
+
           # C. Update Environment Variables (e.g., BUCKET_NAME)
 
           aws lambda update-function-configuration \
@@ -71,6 +75,10 @@ jobs:
           aws lambda update-function-code \
             --function-name ContentListingService \
             --zip-file fileb://backend/contentlisting_service/deployment.zip
+
+          #Wait 5 seconds for the code update to complete ---
+          echo "Waiting 5 seconds for code update to stabilize..."
+          sleep 5
 
           # C. Update Environment Variables (DynamoDB Table Name, Bucket Name)
 
@@ -102,6 +110,10 @@ jobs:
             --function-name userAuthenticate \
             --zip-file fileb://backend/playback_service/deployment.zip
 
+          #Wait 5 seconds for the code update to complete ---
+          echo "Waiting 5 seconds for code update to stabilize..."
+          sleep 5
+          
           # C. Update Environment Variables (CDN Keys)
 
           aws lambda update-function-configuration \
