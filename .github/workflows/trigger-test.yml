@@ -1,0 +1,10 @@
+name: Quick Check
+on:
+  push:
+    branches: [ main ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm Run
+        run: echo "The workflow engine is active!"
