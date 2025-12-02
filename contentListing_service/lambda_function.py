@@ -11,7 +11,7 @@ BUCKET_NAME = os.environ.get('RAWVIDEO_BUCKET_NAME') # Set this in Env Vars
 #Endpoint URL
 ENDPOINT_URL = f'https://s3.{REGION}.amazonaws.com'
 
-# Clients
+# Clients and Resources
 dynamodb = boto3.resource('dynamodb', region_name=REGION)
 table = dynamodb.Table(TABLE_NAME)
 
