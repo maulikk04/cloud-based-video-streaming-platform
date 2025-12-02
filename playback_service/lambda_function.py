@@ -12,6 +12,7 @@ KEY_PAIR_ID = os.environ.get('KEY_PAIR_ID_PLAYBACK')
 # Your CloudFront Domain (e.g. d12345.cloudfront.net)
 CLOUDFRONT_DOMAIN = os.environ.get('CLOUDFRONT_DOMAIN')
 
+#func to get private key from SSM and format it correctly
 def get_private_key():
     client = boto3.client('ssm')
     response = client.get_parameter(Name=PARAMETER_NAME, WithDecryption=True)
