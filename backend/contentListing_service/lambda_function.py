@@ -19,6 +19,7 @@ table = dynamodb.Table(TABLE_NAME)
 # S3 Config for Presigned URLs
 s3_client = boto3.client('s3', region_name=REGION, config=Config(signature_version='s3v4'), endpoint_url=ENDPOINT_URL)
 
+#lambda_handler function
 def lambda_handler(event, context):
     try:
         # 1. Scan DynamoDB to get all videos
