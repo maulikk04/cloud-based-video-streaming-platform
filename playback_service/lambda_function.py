@@ -56,6 +56,7 @@ def make_safe_base64(data):
     encoded = base64.b64encode(data).decode('utf-8')
     return encoded.replace('+', '-').replace('=', '_').replace('/', '~')
 
+#lambda function handler
 def lambda_handler(event, context):
     resource_url = f"https://{CLOUDFRONT_DOMAIN}/*"
     
